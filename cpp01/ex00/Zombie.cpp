@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: svolain <svolain@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vsavolai <vsavolai@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/10 23:58:44 by svolain           #+#    #+#             */
-/*   Updated: 2024/07/11 00:47:21 by svolain          ###   ########.fr       */
+/*   Created: 2024/07/12 11:54:01 by vsavolai          #+#    #+#             */
+/*   Updated: 2024/07/12 13:04:00 by vsavolai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie(std::string name)
+Zombie::Zombie(std::string name): name(name)
 {
-    this->name = name;
+    return ;
 }
 
 Zombie::~Zombie()

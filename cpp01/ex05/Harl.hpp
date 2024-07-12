@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.hpp                                         :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsavolai <vsavolai@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/12 11:55:57 by vsavolai          #+#    #+#             */
-/*   Updated: 2024/07/12 11:55:58 by vsavolai         ###   ########.fr       */
+/*   Created: 2024/07/12 15:44:43 by vsavolai          #+#    #+#             */
+/*   Updated: 2024/07/12 16:29:38 by vsavolai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WEAPON_HPP
-# define  WEAPON_HPP
+#ifndef HARL_HPP
+# define HARL_HPP
 
-# include <string>
+#include <string>
+#include <iostream>
 
-class Weapon {
-
+class Harl {
     public:
-        Weapon(std::string type);
-        void        setType(std::string type);
-        std::string getType();
+        Harl();
+        void complain( std::string level );
     private:
-        std::string type;
-
+        struct _af {
+            std::string level;
+            void        (Harl::*f)(void);
+        };
+        struct _af  af[4];
+        void debug( void );
+        void info( void );
+        void warning( void );
+        void error( void );
 };
 
 #endif

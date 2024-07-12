@@ -1,4 +1,4 @@
-NAME = brainz
+NAME = zombie
 FLAGS = -Wall -Wextra -Werror -g -std=c++11
 
 SRCS = main.cpp \
