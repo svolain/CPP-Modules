@@ -1,7 +1,8 @@
-NAME = pointers
-FLAGS = -Wall -Wextra -Werror -std=c++11
+NAME = fixed
+flags = -Wall -Wextra -Werror -std=c++11
 
-SRCS = main.cpp
+SRCS = main.cpp \
+		Fixed.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
