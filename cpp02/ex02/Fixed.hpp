@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: svolain <svolain@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vsavolai <vsavolai@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/13 12:00:34 by svolain           #+#    #+#             */
-/*   Updated: 2024/07/15 22:22:56 by svolain          ###   ########.fr       */
+/*   Created: 2024/07/16 10:51:23 by vsavolai          #+#    #+#             */
+/*   Updated: 2024/07/16 11:30:08 by vsavolai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,13 @@
 class Fixed {
     public:
         Fixed(void);
+        Fixed(const int integer);
+        Fixed(const float floating_point);
         Fixed(Fixed const &src);
         ~Fixed(void);
-        Fixed & operator=(Fixed const & rhs);
 
         int     getRawBits( void ) const;
         void    setRawBits( int const raw );
-
-        Fixed(const int integer);
-        Fixed(const float floating_point);
-
         float   toFloat( void ) const;
         int     toInt( void ) const;
 
@@ -39,6 +36,7 @@ class Fixed {
 		bool	operator==(Fixed const &rhs) const;
 		bool	operator!=(Fixed const &rhs) const;
 
+        Fixed & operator=(Fixed const & rhs);
         Fixed	operator+(Fixed const &f);
 		Fixed	operator-(Fixed const &f);
 		Fixed	operator*(Fixed const &f);
