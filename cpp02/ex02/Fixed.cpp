@@ -6,7 +6,7 @@
 /*   By: vsavolai <vsavolai@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 10:51:17 by vsavolai          #+#    #+#             */
-/*   Updated: 2024/07/16 12:23:29 by vsavolai         ###   ########.fr       */
+/*   Updated: 2024/07/17 14:34:23 by vsavolai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Fixed::Fixed(void): RawBits(0)
 
 Fixed::Fixed(Fixed const &src)
 {
-    *this = src;
+    this->RawBits = src.getRawBits();
 }
 
 Fixed::~Fixed(void)
@@ -147,7 +147,7 @@ Fixed	Fixed::operator/(Fixed const &rhs)
 
 //---------------------increase and decrease operators----------------//
 
-Fixed	Fixed::operator++(void)
+Fixed&	Fixed::operator++(void)
 {
     this->RawBits++;
     return (*this);
@@ -160,7 +160,7 @@ Fixed	Fixed::operator++(int)
     return (temp);
 }
 
-Fixed	Fixed::operator--()
+Fixed&	Fixed::operator--(void)
 {
     this->RawBits--;
     return (*this);

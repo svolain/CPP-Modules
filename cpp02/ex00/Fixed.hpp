@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: svolain <svolain@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vsavolai <vsavolai@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 12:00:34 by svolain           #+#    #+#             */
-/*   Updated: 2024/07/15 22:37:44 by svolain          ###   ########.fr       */
+/*   Updated: 2024/07/17 14:20:05 by vsavolai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ class Fixed {
 
     private:
         int         RawBits;
+        int         bits = 8;
 };
 
 #endif

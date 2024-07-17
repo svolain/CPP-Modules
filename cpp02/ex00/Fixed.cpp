@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: svolain <svolain@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vsavolai <vsavolai@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 12:00:28 by svolain           #+#    #+#             */
-/*   Updated: 2024/07/15 22:35:15 by svolain          ###   ########.fr       */
+/*   Updated: 2024/07/17 14:31:40 by vsavolai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Fixed::Fixed(void): RawBits(0)
 Fixed::Fixed(Fixed const &src)
 {
     std::cout << "Copy constructor called" << std::endl;
-    *this = src;
+    this->RawBits = src.getRawBits();
 }
 
 Fixed::~Fixed(void)

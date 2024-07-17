@@ -6,7 +6,7 @@
 /*   By: vsavolai <vsavolai@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 10:51:23 by vsavolai          #+#    #+#             */
-/*   Updated: 2024/07/16 11:30:08 by vsavolai         ###   ########.fr       */
+/*   Updated: 2024/07/17 14:32:58 by vsavolai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,9 @@ class Fixed {
 		Fixed	operator*(Fixed const &f);
 		Fixed	operator/(Fixed const &f);
 
-		Fixed	operator++(void);
+		Fixed&	operator++(void);
 		Fixed	operator++(int);
-		Fixed	operator--(void);
+		Fixed&	operator--(void);
 		Fixed	operator--(int);
 
         static  Fixed &min(Fixed &a, Fixed &b);
