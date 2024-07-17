@@ -1,8 +1,8 @@
-NAME = fixed
+NAME = claptrap
 FLAGS = -Wall -Wextra -Werror -std=c++11
 
 SRCS = main.cpp \
-		Fixed.cpp
+		ClapTrap.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
@@ -10,7 +10,7 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	c++ $(FLAGS) -o $@ $^
-	
+
 %.o: %.cpp
 	c++ $(FLAGS) -c $< -o $@
 
