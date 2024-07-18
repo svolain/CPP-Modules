@@ -6,7 +6,7 @@
 /*   By: vsavolai <vsavolai@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 20:41:15 by svolain           #+#    #+#             */
-/*   Updated: 2024/07/18 12:07:45 by vsavolai         ###   ########.fr       */
+/*   Updated: 2024/07/18 12:13:50 by vsavolai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ FragTrap::~FragTrap(void)
 
 FragTrap::FragTrap(const FragTrap& rhs)
 {
-    std::cout << "FragTrap " << this->_name << " copy constructor called\n";
+    std::cout << "ScavTrap " << this->_name << " copy constructor called\n";
     this->_name = rhs._name;
     this->_attack_damage = rhs._attack_damage;
     this->_energy_points = rhs._energy_points;
@@ -47,23 +47,6 @@ FragTrap& FragTrap::operator=(const FragTrap& rhs)
         this->_hit_points = rhs._hit_points;
     }
     return (*this);
-}
-
-void    FragTrap::attack(const std::string& target)
-{
-    if (this->_energy_points <= 0)
-    {
-        std::cout << "FragTrap " << this->_name << " superattack failed, not enough energy points!\n";
-        return ;
-    }
-    else if (this->_hit_points <= 0)
-    {
-        std::cout << "FragTrap " << this->_name << "is dead!\n";
-        return ;
-    }
-    std::cout << "FragTrap " << this->_name << " superattacks " << target;
-    std::cout << ", causing " << this->_attack_damage << " points of damage!\n";
-    this-> _energy_points -= 1;
 }
 
 void    FragTrap::highFiveGuys(void)

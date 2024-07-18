@@ -6,7 +6,7 @@
 /*   By: vsavolai <vsavolai@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 10:37:58 by vsavolai          #+#    #+#             */
-/*   Updated: 2024/07/18 12:15:34 by vsavolai         ###   ########.fr       */
+/*   Updated: 2024/07/18 12:04:22 by vsavolai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ void    ClapTrap::beRepaired(unsigned int amount)
     }
     else if (this->_hit_points <= 0)
     {
-        std::cout << "ClapTrap " << this->_name << " is dead!!\n";
+        std::cout << "ClapTrap " << this->_name << " id dead!!\n";
         return ;
     }
     std::cout << "ClapTrap " << this->_name << " repairs himself " << amount << " points!\n";

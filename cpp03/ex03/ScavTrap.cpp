@@ -6,7 +6,7 @@
 /*   By: vsavolai <vsavolai@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 18:45:10 by svolain           #+#    #+#             */
-/*   Updated: 2024/07/18 12:15:00 by vsavolai         ###   ########.fr       */
+/*   Updated: 2024/07/18 12:05:46 by vsavolai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,10 @@ ScavTrap::~ScavTrap(void)
     std::cout << "ScavTrap " << this->_name << " destructed\n";
 }
 
+
 ScavTrap::ScavTrap(const ScavTrap& rhs)
 {
-    std::cout << "ScavTrap " << this->_name << "copy constructor called\n";
+    std::cout << "ScavTrap " << this->_name << " copy constructor called\n";
     this->_name = rhs._name;
     this->_attack_damage = rhs._attack_damage;
     this->_energy_points = rhs._energy_points;
@@ -53,7 +54,6 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& rhs)
     }
     return (*this);
 }
-
 
 void    ScavTrap::attack(const std::string& target)
 {
@@ -80,7 +80,7 @@ void    ScavTrap::guardGate(void)
         this->guard = true;
     }
     else if (this->_hit_points <= 0)
-        std::cout << "ScavTrap " << this->_name << " is dead!\n";
+        std::cout << "ScavTrap " << this->_name << "is dead!\n";
     else
         std::cout << "ScavTrap " << this->_name << " is already in Gatekeeper mode\n";
 }

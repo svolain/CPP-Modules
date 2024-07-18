@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: svolain <svolain@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vsavolai <vsavolai@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 18:45:10 by svolain           #+#    #+#             */
-/*   Updated: 2024/07/17 19:43:10 by svolain          ###   ########.fr       */
+/*   Updated: 2024/07/18 12:07:05 by vsavolai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,31 @@ ScavTrap::ScavTrap(std::string name): ClapTrap(name, 100, 50, 20)
 ScavTrap::~ScavTrap(void)
 {
     std::cout << "ScavTrap " << this->_name << " destructed\n";
+}
+
+
+ScavTrap::ScavTrap(const ScavTrap& rhs)
+{
+    std::cout << "ScavTrap " << this->_name << " copy constructor called\n";
+    this->_name = rhs._name;
+    this->_attack_damage = rhs._attack_damage;
+    this->_energy_points = rhs._energy_points;
+    this->_hit_points = rhs._hit_points;
+    this->guard = rhs.guard;
+}
+
+ScavTrap& ScavTrap::operator=(const ScavTrap& rhs)
+{
+    std::cout << "ScavTrap " << this->_name << " copy assignment called\n";
+    if (this != &rhs)
+    {
+        this->_name = rhs._name;
+        this->_attack_damage = rhs._attack_damage;
+        this->_energy_points = rhs._energy_points;
+        this->_hit_points = rhs._hit_points;
+        this->guard = rhs.guard;
+    }
+    return (*this);
 }
 
 void    ScavTrap::attack(const std::string& target)

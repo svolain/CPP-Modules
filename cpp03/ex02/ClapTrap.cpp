@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: svolain <svolain@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vsavolai <vsavolai@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 10:37:58 by vsavolai          #+#    #+#             */
-/*   Updated: 2024/07/17 20:36:44 by svolain          ###   ########.fr       */
+/*   Updated: 2024/07/18 12:08:43 by vsavolai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ ClapTrap::ClapTrap(ClapTrap const &src)
     this->_attack_damage = src._attack_damage;
     this->_energy_points = src._energy_points;
     this->_hit_points = src._hit_points;
-    std::cout << "ClapTrap copy constructor called\n";
+    std::cout << "ClapTrap " << this->_name << " copy constructor called\n";
 }
 ClapTrap::~ClapTrap(void)
 {
@@ -49,7 +49,7 @@ ClapTrap & ClapTrap::operator=(ClapTrap const &rhs)
         this->_energy_points = rhs._energy_points;
         this->_hit_points = rhs._hit_points;
     }
-    std::cout << "ClapTrap copy assignment called\n";
+    std::cout << "ClapTrap " << this->_name << " copy assignment called\n";
     return (*this);
 }
 
@@ -84,6 +84,11 @@ void    ClapTrap::beRepaired(unsigned int amount)
     if (this->_energy_points <= 0)
     {
         std::cout << "ClapTrap " << this->_name << " repair failed, not enough energy poinnts!\n";
+        return ;
+    }
+    else if (this->_hit_points <= 0)
+    {
+        std::cout << "ClapTrap " << this->_name << " id dead!!\n";
         return ;
     }
     std::cout << "ClapTrap " << this->_name << " repairs himself " << amount << " points!\n";
