@@ -1,4 +1,4 @@
-NAME = claptrap
+NAME = fragtrap
 FLAGS = -Wall -Wextra -Werror -std=c++11
 
 SRCS = main.cpp \

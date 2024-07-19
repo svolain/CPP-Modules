@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vsavolai <vsavolai@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: svolain <svolain@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 22:36:04 by svolain           #+#    #+#             */
-/*   Updated: 2024/07/19 10:52:57 by vsavolai         ###   ########.fr       */
+/*   Updated: 2024/07/18 22:52:30 by svolain          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ WrongAnimal & WrongAnimal::operator=(WrongAnimal const & rhs)
 {
     if (this != &rhs)
         this->type = rhs.getType();
-    std::cout << "WrongAnimal copy assignment\n";
     return (*this);
 }
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vsavolai <vsavolai@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: svolain <svolain@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 22:53:47 by svolain           #+#    #+#             */
-/*   Updated: 2024/07/19 10:53:05 by vsavolai         ###   ########.fr       */
+/*   Updated: 2024/07/18 23:00:54 by svolain          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ WrongCat & WrongCat::operator=(WrongCat const & rhs)
 {
     if (this != &rhs)
         this->type = rhs.getType();
-    std::cout << "WrongCat copy assignment\n";
     return (*this);
 }
 
