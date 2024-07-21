@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vsavolai <vsavolai@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: svolain <svolain@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 22:53:47 by svolain           #+#    #+#             */
-/*   Updated: 2024/07/19 10:53:05 by vsavolai         ###   ########.fr       */
+/*   Updated: 2024/07/21 15:27:37 by svolain          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ WrongCat::WrongCat(void): WrongAnimal("WrongCat")
     std::cout << "WrongCat constructed\n";
 }
 
-WrongCat::WrongCat(WrongCat const &src)
+WrongCat::WrongCat(WrongCat const &src): WrongAnimal()
 {
     std::cout << "WrongCat copied\n";
     this->type = src.getType();

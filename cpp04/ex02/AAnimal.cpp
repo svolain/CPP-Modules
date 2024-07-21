@@ -1,39 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   AAnimal.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: svolain <svolain@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 19:58:42 by svolain           #+#    #+#             */
-/*   Updated: 2024/07/21 12:53:39 by svolain          ###   ########.fr       */
+/*   Updated: 2024/07/21 15:22:09 by svolain          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/Animal.hpp"
+#include "includes/AAnimal.hpp"
 
-Animal::Animal(void): type("Default")
+AAnimal::AAnimal(void): type("Default")
 {
     std::cout << "Animal constructed\n";
 }
 
-Animal::Animal(std::string type): type(type)
+AAnimal::AAnimal(std::string type): type(type)
 {
     std::cout << "Animal " << this->type << " constructed\n";
 }
 
-Animal::Animal(Animal const &src)
+AAnimal::AAnimal(AAnimal const &src)
 {
     this->type = src.type;
     std::cout << "Animal copied\n";
 }
 
-Animal::~Animal(void)
+AAnimal::~AAnimal(void)
 {
     std::cout << "Animal destructed\n";
 }
 
-Animal & Animal::operator=(Animal const & rhs)
+AAnimal & AAnimal::operator=(AAnimal const & rhs)
 {
     if (this != &rhs)
         this->type = rhs.type;
@@ -41,12 +41,12 @@ Animal & Animal::operator=(Animal const & rhs)
     return (*this);
 }
 
-std::string Animal::getType(void) const
+std::string AAnimal::getType(void) const
 {
     return (this->type);
 }
 
-void    Animal::makeSound(void) const
+void    AAnimal::makeSound(void) const
 {
     std::cout << "Default npc animal noise\n";
 }

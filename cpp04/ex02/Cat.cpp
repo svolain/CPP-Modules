@@ -6,19 +6,19 @@
 /*   By: svolain <svolain@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 21:09:05 by svolain           #+#    #+#             */
-/*   Updated: 2024/07/21 14:59:33 by svolain          ###   ########.fr       */
+/*   Updated: 2024/07/21 15:22:54 by svolain          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/Cat.hpp"
 
-Cat::Cat(void): Animal("Cat")
+Cat::Cat(void): AAnimal("Cat")
 {
     this->brain = new Brain();
     std::cout << "Cat constructed\n";
 }
 
-Cat::Cat(Cat const &src): Animal(src)
+Cat::Cat(Cat const &src): AAnimal(src)
 {
     std::cout << "Cat copied\n";
     this->type = src.type;

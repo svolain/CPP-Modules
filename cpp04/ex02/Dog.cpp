@@ -6,19 +6,19 @@
 /*   By: svolain <svolain@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 21:28:57 by svolain           #+#    #+#             */
-/*   Updated: 2024/07/21 14:46:19 by svolain          ###   ########.fr       */
+/*   Updated: 2024/07/21 15:23:07 by svolain          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/Dog.hpp"
 
-Dog::Dog(void): Animal("Dog")
+Dog::Dog(void): AAnimal("Dog")
 {
     this->brain = new Brain();
     std::cout << "Dog constructed\n";
 }
 
-Dog::Dog(Dog const &src): Animal(src)
+Dog::Dog(Dog const &src): AAnimal(src)
 {
     std::cout << "Dog copied\n";
     this->brain  = new Brain(*src.brain);

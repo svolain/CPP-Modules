@@ -6,7 +6,7 @@
 /*   By: svolain <svolain@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 21:32:26 by svolain           #+#    #+#             */
-/*   Updated: 2024/07/21 15:03:58 by svolain          ###   ########.fr       */
+/*   Updated: 2024/07/21 15:23:31 by svolain          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@ int main()
 { 
     
     std::cout << "\n-----testing copies are deep-----\n\n";
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
+    const AAnimal* j = new Dog();
+    const AAnimal* i = new Cat();
     
     delete j;
     delete i;
     
     std::cout << "\n-----Creating animal array-----\n\n";
-    const Animal* animals[4] = {new Dog(), new Dog(), new Cat(), new Cat()};
+    const AAnimal* animals[4] = {new Dog(), new Dog(), new Cat(), new Cat()};
 
 
     std::cout << "\n-----Testing brain activity-----\n\n";

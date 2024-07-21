@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: svolain <svolain@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/18 20:12:32 by svolain           #+#    #+#             */
-/*   Updated: 2024/07/21 14:59:31 by svolain          ###   ########.fr       */
+/*   Created: 2024/07/18 21:27:48 by svolain           #+#    #+#             */
+/*   Updated: 2024/07/21 15:15:32 by svolain          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#ifndef DOG_HPP
+# define DOG_HPP
 
+# include "AAnimal.hpp"
 # include "Brain.hpp"
-# include "Animal.hpp"
 
-class Cat: public Animal
+class Dog: public AAnimal
 {
     public:
-        Cat(void);
-        Cat(Cat const &src);
-        virtual ~Cat(void);
+        Dog(void);
+        Dog(Dog const &src);
+        virtual ~Dog(void);
 
-        Cat & operator=(Cat const & rhs);
+        Dog & operator=(Dog const & rhs);
         virtual void    makeSound(void) const;
 
         void    setBrains(std::string idea) const;
         void    printBrains(void) const;
+
     private:
         Brain   *brain;
 };

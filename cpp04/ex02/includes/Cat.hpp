@@ -6,7 +6,7 @@
 /*   By: svolain <svolain@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 20:12:32 by svolain           #+#    #+#             */
-/*   Updated: 2024/07/21 14:59:31 by svolain          ###   ########.fr       */
+/*   Updated: 2024/07/21 15:15:16 by svolain          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 # define CAT_HPP
 
 # include "Brain.hpp"
-# include "Animal.hpp"
+# include "AAnimal.hpp"
 
-class Cat: public Animal
+class Cat: public AAnimal
 {
     public:
         Cat(void);

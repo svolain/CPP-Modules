@@ -6,7 +6,7 @@
 /*   By: svolain <svolain@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 21:27:48 by svolain           #+#    #+#             */
-/*   Updated: 2024/07/18 22:05:27 by svolain          ###   ########.fr       */
+/*   Updated: 2024/07/21 14:46:05 by svolain          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define DOG_HPP
 
 # include "Animal.hpp"
+# include "Brain.hpp"
 
 class Dog: public Animal
 {
@@ -24,6 +25,12 @@ class Dog: public Animal
 
         Dog & operator=(Dog const & rhs);
         virtual void    makeSound(void) const;
+
+        void    setBrains(std::string idea) const;
+        void    printBrains(void) const;
+
+    private:
+        Brain   *brain;
 };
 
 #endif

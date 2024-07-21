@@ -6,7 +6,7 @@
 /*   By: svolain <svolain@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 19:02:18 by svolain           #+#    #+#             */
-/*   Updated: 2024/07/18 21:55:56 by svolain          ###   ########.fr       */
+/*   Updated: 2024/07/21 13:00:47 by svolain          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define ANIMAL_HPP
 
 # include <iostream>
+# include <string>
 
 class Animal
 {
