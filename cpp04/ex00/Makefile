@@ -1,4 +1,4 @@
-NAME = Animals
+NAME = animals
 FLAGS = -Wall -Wextra -Werror -std=c++11
 
 SRCS = main.cpp \

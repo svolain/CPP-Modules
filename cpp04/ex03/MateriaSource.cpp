@@ -3,77 +3,86 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: svolain <svolain@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vsavolai <vsavolai@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/21 19:36:42 by svolain           #+#    #+#             */
-/*   Updated: 2024/07/21 20:05:16 by svolain          ###   ########.fr       */
+/*   Updated: 2024/07/22 16:46:47 by vsavolai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "MateriaSource.hpp"
+#include "includes/MateriaSource.hpp"
 
 MateriaSource::MateriaSource(void)
 {
-    for (int i = 0; i < 4; i++)
-        this->materias[i] = NULL;
+    for (int i = 0; i < 4; ++i)
+    {
+        this->inventory[i] = nullptr;
+    }
 }
 
 MateriaSource::MateriaSource(MateriaSource const & src)
 {
     for (int i = 0; i < 4; i++)
-            this->materias[i] = src.materias[i];
+    {
+        if (src.inventory[i] != nullptr)
+            this->inventory[i] = src.inventory[i]->clone();
+    }
 }
 
 MateriaSource::~MateriaSource(void)
 {
     for (int i = 0; i < 4; i++)
-        if (this->materias[i])
-            delete this->materias[i];
+    {
+        if (this->inventory[i] != nullptr)
+            delete(this->inventory[i]);
+    }
 }
 
 MateriaSource & MateriaSource::operator=(MateriaSource const & rhs)
 {
-    for (int i = 0; i < 4; i++)
-        if (this->materias[i])
-            delete this->materias[i];
-        
-    for (int i = 0; i < 4; i++)
+    if (this != &rhs)
     {
-        if (rhs.materias[i])
-             this->materias[i] = rhs.materias[i];
+        for (int i = 0; i < 4; i++)
+        {
+            if (this->inventory[i] != nullptr)
+                delete(this->inventory[i]);
+        }
+            
+        for (int i = 0; i < 4; i++)
+        {
+            if (rhs.inventory[i] != nullptr)
+                this->inventory[i] = rhs.inventory[i]->clone();
             else
-             this->materias[i] = NULL;
+                this->inventory[i] = nullptr;
+        }
     }
     return (*this);
-}
-
-AMateria*   MateriaSource::getMateria(std::string const & type)
-{
-    for (int i = 0; i < 4; i++)
-    {
-        if (this->materias[i] && this->materias[i]->getType() == type)
-            return (materias[i]);
-        return NULL;
-    }
 }
 
 AMateria*   MateriaSource::createMateria(std::string const & type)
 {
     for (int i = 0; i < 4; i++)
     {
-        if (this->materias[i] && this->materias[i]->getType() == type)
-            return (materias[i]->clone());
-        return NULL;
+        if (this->inventory[i] == nullptr)
+            continue ;
+        if (this->inventory[i]->getType() == type)
+            return (this->inventory[i]->clone());
     }
+    return nullptr;
 }
 
 void        MateriaSource::learnMateria(AMateria* m)
 {
+    if (m == 0)
+        return;
     for (int i = 0; i < 4; i++)
     {
-        if (this->materias[i] == NULL)
+        if (this->inventory[i] == nullptr)
         {
-            materias[i] = m;
+            this->inventory[i] = m->clone();
+            delete m;
+            return;
         }
     }
+    delete m;
 }

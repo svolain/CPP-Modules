@@ -3,89 +3,95 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: svolain <svolain@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vsavolai <vsavolai@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/21 18:34:18 by svolain           #+#    #+#             */
-/*   Updated: 2024/07/21 19:08:49 by svolain          ###   ########.fr       */
+/*   Updated: 2024/07/22 16:25:19 by vsavolai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/Character.hpp"
 
-    Character::Character(std::string const &name): name(name)
+Character::Character(void)
+{
+    this->name = "Default";
+}
+
+Character::Character(std::string name)
+{
+    this->name = name;
+}
+
+Character::Character(Character const &src): name(src.name)
+{
+    for (int i = 0; i < 4; i++)
     {
-        for (int i = 0; i < 4; i++)
-            this->inventory[i] = NULL;
-        std::cout << "Character " << this->name << " constructed\n";
+        if (src.inventory[i] != 0)
+            this->inventory[i] = src.inventory[i]->clone();
     }
+}
 
-    Character::Character(Character & const src): name(src.name)
+Character::~Character(void)
+{
+    for (int i = 0; i < 4; i++)
     {
-        for (int i = 0; i < 4; i++)
-            this->inventory[i] = src.inventory[i];
-        std::cout << "Character " << this->name << " copied\n";
+        if (this->inventory[i] != 0)
+            delete(this->inventory[i]);
     }
+}
 
-    Character::~Character(void)
-    {
-        for (int i = 0; i < 4; i++)
-            if (this->inventory[i])
-                delete this->inventory[i];
-        std::cout << "Character " << this->name << " destructed\n";
-    }
-
-    Character & Character::operator=(Character const & rhs)
-    {
-        if (this != &rhs)
-        {
-            this->name = rhs.getName();
-
-            for (int i = 0; i < 4; i++)
-                if (this->inventory[i])
-                    delete this->inventory[i];
-
-            for (int i = 0; i < 4; i++)
-            {
-                if (rhs.inventory[i])
-                    this->inventory[i] = rhs.inventory[i];
-                else
-                 this->inventory[i] = NULL;
-            }
-        }
-        return (*this);
-    }
-
-    std::string const& Character::getName() const
-    {
-        return (this->name);
-    }
-
-    void               Character::equip(AMateria* m)
+Character & Character::operator=(Character const & rhs)
+{
+    if (this != &rhs)
     {
         for (int i = 0; i < 4; i++)
         {
-            if (this->inventory[i] == NULL)
-            {
-                this->inventory[i] = m;
-                std::cout << "Character " << this->name << " equipped with " << m->getType() << std::endl;
-                return;
-            }
+            if (this->inventory[i] != 0)
+                delete(this->inventory[i]);
         }
-    }
 
-    void               Character::unequip(int idx)
-    {
-        if (this->inventory[idx])
+        for (int i = 0; i < 4; i++)
         {
-            inventory[idx] = NULL;
+            if (rhs.inventory[i] != 0)
+                this->inventory[i] = rhs.inventory[i]->clone();
+            else
+                this->inventory[i] = 0;
         }
     }
+    return (*this);
+}
 
-    void               Character::use(int idx, ICharacter& target)
+std::string const & Character::getName() const
+{
+    return this->name;
+}
+
+void    Character::equip(AMateria* m)
+{
+    for (int i = 0; i < 4; i++)
     {
-        if (this->inventory[idx])
+        if (this->inventory[i] == 0)
         {
-            this->inventory[idx]->use(target);
-            std::cout << "Character " << this->name << " uses " << this->inventory[idx]->getType() << std::endl;
+            this->inventory[i] = m;
+            break;
         }
     }
+}
+
+void               Character::unequip(int idx)
+{
+    if (idx > 3 || idx < 0)
+        return ;
+    if (this->inventory[idx] == 0)
+        return ;
+    inventory[idx] = 0;
+}
+
+void Character::use(int idx, ICharacter& target)
+{
+    if (idx > 3 || idx < 0)
+	    return ;
+    if (this->inventory[idx] == 0)
+	    return ;
+    this->inventory[idx]->use(target);
+}
