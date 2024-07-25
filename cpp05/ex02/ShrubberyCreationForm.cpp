@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: svolain <svolain@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vsavolai <vsavolai@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 21:52:48 by svolain           #+#    #+#             */
-/*   Updated: 2024/07/24 23:35:59 by svolain          ###   ########.fr       */
+/*   Updated: 2024/07/25 12:50:41 by vsavolai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,14 +40,12 @@ void ShrubberyCreationForm::execute(const Bureaucrat& executor) const
     else 
     {
         std::ofstream file( this->getName() + "_shrubbery" );
-         file << "       *        " << std::endl;
-        file << "       / \       " << std::endl;
-        file << "      /   \      " << std::endl;
-        file << "      /   \      " << std::endl;
-        file << "     /     \     " << std::endl;
-        file << "     /     \     " << std::endl;
-        file << "    /       \    " << std::endl;
-        file << "   /_________\   " << std::endl;
-         file << "     |   |      " << std::endl;
+        file << "    (     )     " << std::endl;
+        file << "   (       )    " << std::endl;
+        file << "    (     )     " << std::endl;
+        file << "     |   |      " << std::endl;
+        file << "     |   |      " << std::endl;
+        file << "     |   |      " << std::endl;
+        file << "     |   |      " << std::endl;
     }
 }

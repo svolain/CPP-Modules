@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: svolain <svolain@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vsavolai <vsavolai@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 18:07:02 by svolain           #+#    #+#             */
-/*   Updated: 2024/07/24 23:32:46 by svolain          ###   ########.fr       */
+/*   Updated: 2024/07/25 12:31:38 by vsavolai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ class AForm
 
         class IsSignedException : public std::exception {
         public:
-            virtual const char* what() const throw() { return "Form not signed"; }
+            virtual const char* what() const throw();
         };
 
         private:
