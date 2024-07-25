@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
+/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsavolai <vsavolai@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/25 13:34:15 by vsavolai          #+#    #+#             */
-/*   Updated: 2024/07/25 13:34:16 by vsavolai         ###   ########.fr       */
+/*   Created: 2024/07/25 13:29:14 by vsavolai          #+#    #+#             */
+/*   Updated: 2024/07/25 13:29:15 by vsavolai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRESIDENTIALPARDONFORM_HPP
-# define PRESIDENTIALPARDONFORM_HPP
+#ifndef SHRUBBERYCREATIONFORM_HPP
+# define SHRUBBERYCREATIONFORM_HPP
 
-#include "AForm.hpp"
+# include "AForm.hpp"
+# include <fstream>
 
-class PresidentialPardonForm: public AForm
+class ShrubberyCreationForm: public AForm
 {
-    
     public:
-        PresidentialPardonForm(const std::string& target);
-        PresidentialPardonForm(const PresidentialPardonForm& src);
-        ~PresidentialPardonForm();
+        ShrubberyCreationForm(const std::string& target);
+        ShrubberyCreationForm(const ShrubberyCreationForm& src);
+        ~ShrubberyCreationForm();
 
-        PresidentialPardonForm& operator=(const PresidentialPardonForm& rhs);
+        ShrubberyCreationForm& operator=(const ShrubberyCreationForm& rhs);
         
         void execute(const Bureaucrat& executor) const;
 
     private:
         std::string _target;
-        PresidentialPardonForm();
+        ShrubberyCreationForm();
 };
 
 #endif
