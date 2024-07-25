@@ -6,7 +6,7 @@
 /*   By: vsavolai <vsavolai@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 13:27:53 by vsavolai          #+#    #+#             */
-/*   Updated: 2024/07/25 13:27:56 by vsavolai         ###   ########.fr       */
+/*   Updated: 2024/07/25 16:01:48 by vsavolai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class AForm
         AForm(void);
         AForm(std::string name, int gradeSign, int gradeExecute);
         AForm( const AForm& src );
-        ~AForm();
+        virtual ~AForm();
 
         AForm&              operator=( const AForm& rhs );
 
