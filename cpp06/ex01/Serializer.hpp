@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
+/*   Serializer.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: svolain <svolain@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/25 20:52:56 by svolain           #+#    #+#             */
-/*   Updated: 2024/07/26 23:13:02 by svolain          ###   ########.fr       */
+/*   Created: 2024/07/26 23:11:30 by svolain           #+#    #+#             */
+/*   Updated: 2024/07/26 23:31:58 by svolain          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,24 @@
 # define SCALARCONVERTER_HPP
 
 # include <iostream>
-# include <string>
-# include <stdexcept>
 
-# define CHAR_MIN 0
-# define CHAR_MAX 255
+struct Data
+{
+	std::string name;
+	int         grade;
+};
 
-class ScalarConverter
+class Serializer
 {
     public:
-        static void convert(std::string input);
+        static uintptr_t serialize(Data* ptr);
+        static Data* deserialize(uintptr_t raw);
 
     private:
-        ScalarConverter(void);
-        ~ScalarConverter(void);
-        ScalarConverter(ScalarConverter const & src);
-        ScalarConverter& operator=(const ScalarConverter& other);
+        Serializer(void);
+        ~Serializer(void);
+        Serializer(Serializer const & src);
+        Serializer& operator=(const Serializer& other);
 };
 
 #endif
