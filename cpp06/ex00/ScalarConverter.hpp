@@ -6,7 +6,7 @@
 /*   By: svolain <svolain@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 20:52:56 by svolain           #+#    #+#             */
-/*   Updated: 2024/07/26 23:13:02 by svolain          ###   ########.fr       */
+/*   Updated: 2024/07/27 13:28:07 by svolain          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <iostream>
 # include <string>
 # include <stdexcept>
+# include <iomanip> 
 
 # define CHAR_MIN 0
 # define CHAR_MAX 255

@@ -6,7 +6,7 @@
 /*   By: svolain <svolain@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 20:53:00 by svolain           #+#    #+#             */
-/*   Updated: 2024/07/25 23:33:33 by svolain          ###   ########.fr       */
+/*   Updated: 2024/07/27 13:28:47 by svolain          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ void	toChar(std::string input)
         int num = std::stoi(input);
 
         if (num < CHAR_MIN || num > CHAR_MAX) {
-            throw std::out_of_range("char: impossible");
+            std::cerr << "char: impossible" << std::endl;
+            return ;
         }
 
         char charValue = static_cast<char>(num);
@@ -44,20 +45,26 @@ void	toChar(std::string input)
     } 
     catch (const std::invalid_argument& e) 
     {
-        std::cerr << "" << std::endl;
+        std::cerr << "char: impossible" << std::endl;
     } 
     catch (const std::out_of_range& e) 
     {
         std::cerr << "Out of range: " << e.what() << std::endl;
+        return ;
     }
 }
 
 void	toFloat(std::string input)
 {
+    if (input == "nan" || input == "inf" || input == "-inf") 
+    {
+            std::cerr << "float: nanf" << std::endl;
+            return;
+    }
     try
     {
         float f = std::stof(input);
-        std::cout << "float: " << f << std::endl;
+        std::cout << "float: " << std::fixed << std::setprecision(1) << f << "f\n";
     }
     catch(const std::invalid_argument& e)
     {
