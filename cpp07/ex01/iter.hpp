@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: svolain <svolain@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vsavolai <vsavolai@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/27 18:57:50 by svolain           #+#    #+#             */
-/*   Updated: 2024/07/27 19:15:00 by svolain          ###   ########.fr       */
+/*   Updated: 2024/08/02 12:14:02 by vsavolai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,14 @@ void print(T t)
 }
 
 template <typename T>
-void iter(T* arr, int len, void func(T const&))
+void iter(T* arr, int len, void func(T const &))
+{
+    for (int i = 0; i < len; i++)
+        func(arr[i]);
+}
+
+template <typename T>
+void iter(T* arr, int len, void func(T&))
 {
     for (int i = 0; i < len; i++)
         func(arr[i]);
