@@ -3,29 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: svolain <svolain@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vsavolai <vsavolai@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/27 19:17:37 by svolain           #+#    #+#             */
-/*   Updated: 2024/07/28 12:39:10 by svolain          ###   ########.fr       */
+/*   Updated: 2024/08/02 11:11:55 by vsavolai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
 #include "Array.hpp"
-
-template <typename T>
-void print_array(Array<T> arr)
-{
-	std::cout << "{";
-	for (int i = 0; i < arr.size(); i++)
-	{
-		if (i != 0)
-			std::cout << ", ";
-		std::cout << arr[i];
-	}
-	std::cout << "}\n";
-}
 
 int main(int, char**)
 {
@@ -40,20 +27,45 @@ int main(int, char**)
 	}
 
 	Array<int> ints = Array<int>(10);
-	print_array(ints);
+	std::cout << "{";
+	for (int i = 0; i < ints.size(); i++)
+	{
+		if (i != 0)
+			std::cout << ", ";
+		std::cout << ints[i];
+	}
+	std::cout << "}\n";
 
-	Array<int> copy1 = Array<int>(ints);
-	for (int i = 0; i < copy1.size(); i++)
-		copy1[i] = i;
+	Array<int> c = Array<int>(ints);
+	for (int i = 0; i < c.size(); i++)
+		c[i] = i;
 
 	Array<int> copy2 = Array<int>();
-	copy2 = copy1;
-	for (int i = 0; i < copy2.size(); i++)
-		copy2[i] = i * i;
+	Array<int> d = c;
+	for (int i = 0; i < d.size(); i++)
+		d[i] = i * i;
 
-	print_array(ints);
-	print_array(copy1);
-	print_array(copy2);
+	for (int i = 0; i < ints.size(); i++)
+	{
+		if (i != 0)
+			std::cout << ", ";
+		std::cout << ints[i];
+	}
+	std::cout << "}\n";
+	for (int i = 0; i < c.size(); i++)
+	{
+		if (i != 0)
+			std::cout << ", ";
+		std::cout << c[i];
+	}
+	std::cout << "}\n";
+	for (int i = 0; i < d.size(); i++)
+	{
+		if (i != 0)
+			std::cout << ", ";
+		std::cout << d[i];
+	}
+	std::cout << "}\n";
 
 	try
 	{
@@ -63,21 +75,6 @@ int main(int, char**)
 	{
 		std::cout << e.what() << "\n";
 	}
-
-	Array<std::string> strs = Array<std::string>(3);
-	print_array(strs);
-	try
-	{
-		strs[0] = "hello";
-		strs[1] = "it's";
-		strs[2] = "me";
-		strs[3] = "you";
-	}
-	catch (std::exception& e)
-	{
-		std::cout << e.what() << "\n";
-	}
-	print_array(strs);
 
 	return 0;
 }
