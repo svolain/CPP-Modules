@@ -6,7 +6,7 @@
 /*   By: vsavolai <vsavolai@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/27 18:57:50 by svolain           #+#    #+#             */
-/*   Updated: 2024/08/02 12:14:02 by vsavolai         ###   ########.fr       */
+/*   Updated: 2024/08/12 09:37:14 by vsavolai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,6 @@
 # define ITER_HPP
 
 # include <iostream>
-
-template <typename T>
-void print(T t)
-{
-    std::cout << t << std::endl;
-}
 
 template <typename T>
 void iter(T* arr, int len, void func(T const &))
