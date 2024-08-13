@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: svolain <svolain@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vsavolai <vsavolai@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/28 20:16:58 by svolain           #+#    #+#             */
-/*   Updated: 2024/07/28 20:34:28 by svolain          ###   ########.fr       */
+/*   Created: 2024/08/13 12:12:26 by vsavolai          #+#    #+#             */
+/*   Updated: 2024/08/13 13:00:41 by vsavolai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,14 @@ int main(void)
     } catch (const std::exception &e) {
         std::cerr << e.what() << std::endl;
     }
+
+    std::cout << "\ntesting range of iterators" << std::endl;
+
+    Span sp2 = Span(5);
+    std::vector<int> range = {6, 7, 8, 9, 10};
+    
+    sp2.addRange(range.begin(), range.end());
+    sp2.printSpan();
 
     return 0;
 }

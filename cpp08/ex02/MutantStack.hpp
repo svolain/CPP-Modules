@@ -6,7 +6,7 @@
 /*   By: vsavolai <vsavolai@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 20:05:01 by svolain           #+#    #+#             */
-/*   Updated: 2024/07/30 12:18:06 by vsavolai         ###   ########.fr       */
+/*   Updated: 2024/08/13 13:37:17 by vsavolai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define MUTANTSTACK_HPP
 
 # include <stack>
+# include <iostream>
 
 template<typename T>
 class MutantStack : public std::stack<T>
@@ -44,7 +45,7 @@ MutantStack<T>::MutantStack(const MutantStack &src)
 template <typename T>
 MutantStack<T>& MutantStack<T>::operator=(const MutantStack& rhs)
 {
-     std::stack< T, Container >::operator=( rhs );
+     std::stack<T>::operator=( rhs );
         return *this;
 }
 

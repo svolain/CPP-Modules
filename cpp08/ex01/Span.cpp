@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: svolain <svolain@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vsavolai <vsavolai@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/28 18:09:12 by svolain           #+#    #+#             */
-/*   Updated: 2024/07/28 20:25:56 by svolain          ###   ########.fr       */
+/*   Updated: 2024/08/13 12:44:56 by vsavolai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,4 +78,14 @@ void    Span::printSpan(void)
             std::cout << num << " ";
         }
         std::cout << "}" << std::endl;
+}
+
+void Span::addRange(std::vector<int>::iterator start, std::vector<int>::iterator end)
+{
+    if (std::distance(start, end) + this->_vec.size() > this->_maxSize)
+    {
+        std::cout << "Range biger than max size of container" << std::endl;
+        return ;
+    }
+    this->_vec.insert(this->_vec.end(), start, end);
 }

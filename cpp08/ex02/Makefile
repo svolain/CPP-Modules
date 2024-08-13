@@ -1,8 +1,7 @@
-NAME = span
+NAME = mutantstack
 FLAGS = -Wall -Wextra -Werror -std=c++11
 
-SRCS = main.cpp \
-		Span.cpp
+SRCS = main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

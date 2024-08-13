@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: svolain <svolain@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vsavolai <vsavolai@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/28 18:09:07 by svolain           #+#    #+#             */
-/*   Updated: 2024/07/29 21:08:03 by svolain          ###   ########.fr       */
+/*   Updated: 2024/08/13 12:35:04 by vsavolai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,9 @@
 # include <iostream>
 # include <vector>
 # include <algorithm>
-# include<limits>
-#include <exception>
+# include <limits>
+# include <exception>
+# include <iterator>
 
 class Span
 {
@@ -33,6 +34,7 @@ class Span
         int longestSpan() const;
 
         void printSpan(void);
+        void addRange(std::vector<int>::iterator start, std::vector<int>::iterator end);
 
         class MaxSizeReached : public std::exception {
         public:
