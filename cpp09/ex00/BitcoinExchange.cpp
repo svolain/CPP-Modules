@@ -6,7 +6,7 @@
 /*   By: svolain <svolain@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 08:40:33 by vsavolai          #+#    #+#             */
-/*   Updated: 2024/08/21 18:40:27 by svolain          ###   ########.fr       */
+/*   Updated: 2024/08/21 20:07:47 by svolain          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ BitcoinExchange::~BitcoinExchange(void)
 
 BitcoinExchange & BitcoinExchange::operator=(BitcoinExchange const &rhs)
 {
-    this->_daterate = rhs._daterate;
+    if (this != &rhs)
+        this->_daterate = rhs._daterate;
     return *this;
 }
 
