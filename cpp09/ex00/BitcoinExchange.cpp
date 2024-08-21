@@ -6,7 +6,7 @@
 /*   By: vsavolai <vsavolai@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 08:40:33 by vsavolai          #+#    #+#             */
-/*   Updated: 2024/08/20 14:41:29 by vsavolai         ###   ########.fr       */
+/*   Updated: 2024/08/21 13:16:20 by vsavolai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,19 @@ BitcoinExchange & BitcoinExchange::operator=(BitcoinExchange const &rhs)
     return *this;
 }
 
-void BitcoinExchange::readData(std::ifstream& internal_db)
+void BitcoinExchange::readData(std::ifstream& database)
 {
+    std::string line;
 
+    std::getline(database, line);
+    while(std::getline(database, line))
+    {
+        size_t comma = line.find(",");
+        std::string key = line.substr(0, comma - 1);
+        std::string value = line.substr(comma + 1);
+        float fl_value = std::stof(value);
+        this->_daterate[key] = fl_value;
+    }
 }
 
 float BitcoinExchange::getRate(const std::string& date)
