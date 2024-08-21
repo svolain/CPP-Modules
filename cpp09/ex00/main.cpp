@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vsavolai <vsavolai@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: svolain <svolain@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 08:36:06 by vsavolai          #+#    #+#             */
-/*   Updated: 2024/08/20 14:04:13 by vsavolai         ###   ########.fr       */
+/*   Updated: 2024/08/21 18:48:10 by svolain          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int main(int argc, char **argv)
         size_t pipe = line.find("|");
         if (pipe == std::string::npos || line.length() < pipe + 2)
         {
-            std::cerr << "Error: bad input\n";
+            std::cerr << "Error: bad input => " << line << std::endl;
             continue;
         }
         std::string date = line.substr(0, pipe - 1);

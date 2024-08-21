@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vsavolai <vsavolai@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: svolain <svolain@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 08:36:02 by vsavolai          #+#    #+#             */
-/*   Updated: 2024/08/20 13:57:37 by vsavolai         ###   ########.fr       */
+/*   Updated: 2024/08/21 18:26:26 by svolain          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ class BitcoinExchange {
         bool CheckRateFormat(const std::string& rate);
     private:
         std::map<std::string, float> _daterate;
-    
 };
 
 #endif
