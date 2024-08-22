@@ -1,26 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   PmergeMe.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vsavolai <vsavolai@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/22 09:54:12 by vsavolai          #+#    #+#             */
-/*   Updated: 2024/08/22 09:54:14 by vsavolai         ###   ########.fr       */
+/*   Created: 2024/08/22 09:54:51 by vsavolai          #+#    #+#             */
+/*   Updated: 2024/08/22 13:24:21 by vsavolai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "RPN.hpp"
+#include "PmergeMe.hpp"
 
-int main(int argc, char **argv)
+PmergeMe::PmergeMe(void)
+{}
+
+PmergeMe::PmergeMe(const PmergeMe &src)
 {
-    if (argc != 2)
-    {
-        std::cout << "Error: wrong input" << std::endl;
-        return (1);
-    }
-    RPN calculator;
-    if(!calculator.checkCalculation(argv[1]))
-        return(1);
-    calculator.runRPN(argv[1]);
+    *this = src;
 }
+
+PmergeMe::~PmergeMe(void)
+{}
+
+PmergeMe&	PmergeMe::operator=(const PmergeMe &rhs)
+{
+    return *this;
+}
+
+void mergeContainers(char **numbers)
+{
+    std::vector<unsigned int> vec_storage;
+    std::list<unsigned int> lst_storage;
+
+}
+

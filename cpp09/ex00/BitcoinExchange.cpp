@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: svolain <svolain@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vsavolai <vsavolai@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/30 08:40:33 by vsavolai          #+#    #+#             */
-/*   Updated: 2024/08/21 20:07:47 by svolain          ###   ########.fr       */
+/*   Created: 2024/08/22 09:53:30 by vsavolai          #+#    #+#             */
+/*   Updated: 2024/08/22 09:53:32 by vsavolai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
