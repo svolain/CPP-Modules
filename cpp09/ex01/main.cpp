@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vsavolai <vsavolai@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: svolain <svolain@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 09:54:12 by vsavolai          #+#    #+#             */
-/*   Updated: 2024/08/22 09:54:14 by vsavolai         ###   ########.fr       */
+/*   Updated: 2024/08/23 12:46:03 by svolain          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main(int argc, char **argv)
 {
     if (argc != 2)
     {
-        std::cout << "Error: wrong input" << std::endl;
+        std::cerr << "Error: wrong input" << std::endl;
         return (1);
     }
     RPN calculator;

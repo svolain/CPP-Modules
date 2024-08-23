@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vsavolai <vsavolai@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: svolain <svolain@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 09:53:46 by vsavolai          #+#    #+#             */
-/*   Updated: 2024/08/22 09:53:52 by vsavolai         ###   ########.fr       */
+/*   Updated: 2024/08/23 12:46:30 by svolain          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main(int argc, char **argv)
 {
     if (argc != 2)
     {
-        std::cout << "Error: no input file\n";
+        std::cerr << "Error: no input file\n";
         return (1);
     }
     std::ifstream input_file(argv[1], std::ifstream::in);
