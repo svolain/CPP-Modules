@@ -6,7 +6,7 @@
 /*   By: vsavolai <vsavolai@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 11:33:57 by vsavolai          #+#    #+#             */
-/*   Updated: 2024/08/22 11:33:59 by vsavolai         ###   ########.fr       */
+/*   Updated: 2024/08/26 11:27:10 by vsavolai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class RPN {
         bool    checkCalculation(const std::string& rpn);
         void	runRPN(const std::string& rpn);
 	private:
-		std::stack<int> _container;
+		std::stack<float> _container;
 };
 
 #endif

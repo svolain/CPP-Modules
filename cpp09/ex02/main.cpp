@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: svolain <svolain@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vsavolai <vsavolai@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 09:54:46 by vsavolai          #+#    #+#             */
-/*   Updated: 2024/08/23 12:52:17 by svolain          ###   ########.fr       */
+/*   Updated: 2024/08/26 11:17:26 by vsavolai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ int main(int argc, char **argv)
         return (1);
     }
     PmergeMe merger;
-    merger.parseNumbers(argv, argc);
+    if (!merger.parseNumbers(argv, argc))
+        return 1;
     merger.sortNumbers(argv, argc);
+    return 0;
 }

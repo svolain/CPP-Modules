@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PmergeMe.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: svolain <svolain@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vsavolai <vsavolai@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 09:54:51 by vsavolai          #+#    #+#             */
-/*   Updated: 2024/08/23 12:41:24 by svolain          ###   ########.fr       */
+/*   Updated: 2024/08/26 11:16:46 by vsavolai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,31 +29,42 @@ PmergeMe&	PmergeMe::operator=(const PmergeMe &rhs)
     return *this;
 }
 
-void PmergeMe::parseNumbers(char **numbers, int numbers_len)
+bool PmergeMe::parseNumbers(char **numbers, int numbers_len)
 {
     try {
         for (int i = 1; i < numbers_len; i += 1)
+        {
             if (std::string(numbers[i]).find_first_not_of("0123456789 ") != std::string::npos)
+            {
 			    throw PmergeMe::InvalidInputException();
+                return false;
+            }
+        }
 
         std::unordered_set<unsigned int> repetition_check;
         for (int i = 1; i < numbers_len; i += 1) {
             unsigned int num = std::stoul(numbers[i]);
             auto result = repetition_check.insert(num); 
-            if (!result.second) {
+            if (!result.second) 
+            {
                 throw PmergeMe::InvalidInputException();
+                return false;
             }
         }
     }
     catch (const std::out_of_range& e) {
         std::cerr << "Error: number out of range: " << e.what() << std::endl;
+        return false;
     }
     catch (const PmergeMe::InvalidInputException& e) {
         std::cerr << e.what() << std::endl;
+        return false;
     }
     catch (const std::exception& e) {
         std::cerr << "Unexpected error: " << e.what() << std::endl;
+        return false;
     }
+    return true;
 }
 
 
@@ -187,9 +198,9 @@ void PmergeMe::sortNumbers(char **numbers, int numbers_len)
     vec_storage = mergeInsertVector(vec_storage);
     double vec_time = static_cast<double>(std::clock() - vec_start) / static_cast<double>(CLOCKS_PER_SEC) * 100000;
 
-    std::cout << "Vector Before: ";
+    std::cout << "Vector Affter: ";
 	printContainer(vec_storage);
-    std::cout << "List Before: ";
+    std::cout << "List After: ";
     printContainer(lst_storage);
 
     std::cout << "Time to process a range of " << numbers_len - 1

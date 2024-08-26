@@ -6,7 +6,7 @@
 /*   By: vsavolai <vsavolai@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 09:53:30 by vsavolai          #+#    #+#             */
-/*   Updated: 2024/08/22 09:53:32 by vsavolai         ###   ########.fr       */
+/*   Updated: 2024/08/26 10:40:42 by vsavolai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,11 +78,11 @@ bool BitcoinExchange::CheckValidDate(const std::string& date)
     std::string str_year = date.substr(0, dash1);
     std::string str_month = date.substr(dash1 + 1, dash2 - 1);
     std::string str_day = date.substr(dash2 + 1);
-
-    int year = std::stoi(str_year);
-    int month = std::stoi(str_month);
-    int day = std::stoi(str_day);
-    if (year < 2009 || (year == 2009 && month == 1 && day == 1))
+    try {
+        int year = std::stoi(str_year);
+        int month = std::stoi(str_month);
+        int day = std::stoi(str_day);
+        if (year < 2009 || (year == 2009 && month == 1 && day == 1))
 	{
 		std::cerr << "Error: Date is below 2009-01-02" << std::endl;
 		return false;
@@ -94,10 +94,16 @@ bool BitcoinExchange::CheckValidDate(const std::string& date)
 	}
     if ((day < 1 || day > 31)
 	        ||  (day == 31 && (month == 2 || month == 4 || month == 6 || month == 9 || month == 11))
-			||  (day > 28 && month == 2))
+			|| (day > 29 && month == 2 && year % 4 == 0) || (day > 28 && month == 2 && year % 4 != 0))
     {
         std::cerr << "Error: incorrect day => " << date << std::endl;
 		return false;
+    }
+    }
+    catch (const std::exception& e)
+    {
+        std::cerr << "Error: Date not correct =>" << e.what() << std::endl;
+        return false;
     }
     return true;
 }

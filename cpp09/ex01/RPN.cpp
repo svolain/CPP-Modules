@@ -6,7 +6,7 @@
 /*   By: vsavolai <vsavolai@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 09:54:21 by vsavolai          #+#    #+#             */
-/*   Updated: 2024/08/22 09:54:23 by vsavolai         ###   ########.fr       */
+/*   Updated: 2024/08/26 11:27:40 by vsavolai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,9 +74,9 @@ void	RPN::runRPN( const std::string& rpn )
 		pos = operators.find(c);
 		if (pos != std::string::npos)
 		{
-			int last = this->_container.top();
+			float last = this->_container.top();
             this->_container.pop();
-            int slast = this->_container.top();
+            float slast = this->_container.top();
             this->_container.pop();
 			switch (pos) {
                 case 0:

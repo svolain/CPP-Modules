@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PmergeMe.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: svolain <svolain@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vsavolai <vsavolai@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 09:54:55 by vsavolai          #+#    #+#             */
-/*   Updated: 2024/08/23 13:41:09 by svolain          ###   ########.fr       */
+/*   Updated: 2024/08/26 11:15:38 by vsavolai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class PmergeMe {
         PmergeMe&	operator=(const PmergeMe &rhs); 
 
         void sortNumbers(char **numbers, int numbers_len);
-        void parseNumbers(char **numbers, int numbers_len);
+        bool parseNumbers(char **numbers, int numbers_len);
 
         class InvalidInputException : public std::exception {
             public:

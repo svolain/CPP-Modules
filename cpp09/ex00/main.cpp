@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: svolain <svolain@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vsavolai <vsavolai@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 09:53:46 by vsavolai          #+#    #+#             */
-/*   Updated: 2024/08/23 12:46:30 by svolain          ###   ########.fr       */
+/*   Updated: 2024/08/26 10:40:17 by vsavolai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,19 @@ int main(int argc, char **argv)
 {
     if (argc != 2)
     {
-        std::cerr << "Error: no input file\n";
+        std::cerr << "Error: no input file" << std::endl;
         return (1);
     }
     std::ifstream input_file(argv[1], std::ifstream::in);
 	if (!input_file.is_open())
     {
-        std::cerr << "Error: can't open input file\n";
+        std::cerr << "Error: can't open input file" << std::endl;
         return (1);
     }
     std::ifstream database("./data.csv", std::ifstream::in);
     if (!database.is_open())
     {
-        std::cerr << "Error: can't open database\n";
+        std::cerr << "Error: can't open database" << std::endl;
         return (1);
     }
 
